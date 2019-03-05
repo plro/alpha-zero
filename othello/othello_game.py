@@ -153,6 +153,9 @@ class OthelloGame(Game):
                                             valid_moves.append((1, x, y, d))
                                             found_valid_move = True
                                             break
+                                        # Stop if empty square
+                                        elif self.state[row][col] == 0:
+                                            break
                                     else:
                                         break
 
@@ -209,8 +212,10 @@ class OthelloGame(Game):
 
     def print_board(self):
         """Prints the board state."""
-        print("   0    1    2    3    4    5")
-        for x in range(self.row):
+        print(' ',end='')
+        for y in range(self.column):
+          print(' ',y,' ', end='')
+        print('\n')        for x in range(self.row):
             print(x, end='')
             for y in range(self.column):
                 if self.state[x][y] == 0:
