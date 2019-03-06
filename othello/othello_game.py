@@ -215,7 +215,8 @@ class OthelloGame(Game):
         print(' ',end='')
         for y in range(self.column):
           print(' ',y,' ', end='')
-        print('\n')        for x in range(self.row):
+        print('\n')        
+        for x in range(self.row):
             print(x, end='')
             for y in range(self.column):
                 if self.state[x][y] == 0:
